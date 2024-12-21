@@ -126,12 +126,12 @@
         };
         number_layer {
             bindings = <
-            &none  &none  &none  &none  &none                                                                                        &none      &none      &none      &none          &none
-            &none  &none  &none  &none  &none  &none                                                                &none            &kp CARET  &kp TILDE  &kp UNDER  &kp EXCL       &none
-            &none  &none  &none  &none  &none  &none                                                                &kp PRCNT        &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp COLON      &none
-            &none  &none  &none  &none  &none  &none                                                                &kp KP_PLUS      &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS   &none
-            &none  &none  &none  &none  &none  &none  &none  &none  &none   &kp LT        &kp GT      &kp KP_EQUAL  &kp KP_MULTIPLY  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DIVIDE  &none
-            &none  &none  &none  &none  &none         &none  &none  &none   &kp KP_COMMA  &kp KP_DOT  &kp KP_N0                      &lparang   &kp LBKT   &kp RBKT   &rparang       &none
+            &none  &none  &none  &none  &none                                                                                     &none      &none      &none      &none          &none
+            &none  &none  &none  &none  &none  &none                                                             &none            &kp CARET  &kp TILDE  &kp UNDER  &kp EXCL       &none
+            &none  &none  &none  &none  &none  &none                                                             &kp PRCNT        &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp COLON      &none
+            &none  &none  &none  &none  &none  &none                                                             &kp KP_PLUS      &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS   &none
+            &none  &none  &none  &none  &none  &none  &none  &none  &none   &kp LT     &kp GT      &kp KP_EQUAL  &kp KP_MULTIPLY  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DIVIDE  &none
+            &none  &none  &none  &none  &none         &none  &none  &none   &kp COMMA  &kp KP_DOT  &kp KP_N0                      &lparang   &kp LBKT   &kp RBKT   &rparang       &none
             >;
         };
         symbols_layer {
@@ -140,8 +140,8 @@
             &none      &kp GRAVE  &kp LPAR   &kp RPAR   &kp SEMI  &kp COMMA                                                               &none  &none  &none  &none  &none  &none
             &kp EXCL   &kp LBRC   &kp APOS   &kp DQT    &kp RBRC  &kp QMARK                                                               &none  &none  &none  &none  &none  &none
             &kp HASH   &kp CARET  &kp EQUAL  &kp UNDER  &kp DLLR  &kp ASTRK                                                               &none  &none  &none  &none  &none  &none
-            &kp AT     &kp LT     &kp PIPE   &kp MINUS  &kp GT    &kp FSLH   &kp BSLH   &kp DOT    &kp STAR          &none  &none  &none  &none  &none  &none  &none  &none  &none
-            &kp TILDE  &kp AMPS   &kp LBKT   &kp RBKT   &kp PLUS             &kp PRCNT  &kp COLON  &kp SEMI          &none  &none  &none         &none  &none  &none  &none  &none
+            &kp TILDE  &kp LT     &kp PIPE   &kp MINUS  &kp GT    &kp FSLH   &kp BSLH   &kp DOT    &kp STAR          &none  &none  &none  &none  &none  &none  &none  &none  &none
+            &kp AT     &kp AMPS   &kp LBKT   &kp RBKT   &kp PLUS             &kp PRCNT  &kp COLON  &kp SEMI          &none  &none  &none         &none  &none  &none  &none  &none
             >;
         };
     };
