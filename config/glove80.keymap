@@ -17,6 +17,7 @@
 #define L_DEF 0
 #define L_CUR 1
 #define L_NUM 2
+#define L_SYM 3
 
 / {
     behaviors {
@@ -105,12 +106,12 @@
 
         default_layer {
             bindings = <
-            &kp F1     &kp F2      &kp F3      &kp F4      &kp F5                                                                                                      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
-            &kp EQUAL  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                                                                               &kp N6     &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
-            &kp GRAVE  &kp X       &kp Y       &kp O       &kp U       &kp SQT                                                                              &kp SEMI   &kp L       &kp D       &kp W       &kp V       &kp Z
-            &kp CAPS   &hm LALT B  &hm LGUI I  &hm LCTL E  &hm LSFT A  &kp COMMA                                                                            &kp DOT    &hm LSFT H  &hm LCTL T  &hm LGUI S  &hm LALT N  &kp Q
-            &kp LSHFT  &kp J       &kp P       &kp G       &kp C       &kp MINUS  &kp ESC         &kp UP         &kp DOWN   &kp LEFT  &kp RIGHT  &kp RET    &kp FSLH   &kp R       &kp M       &kp F       &kp K       &kp RSHFT
-            &none      &kp HOME    &kp PG_DN   &kp PG_UP   &kp END                &lm L_CUR BSPC  &lm L_NUM DEL  &none      &none     &kp TAB    &kp SPACE             &lparang    &kp LBKT    &kp RBKT    &rparang    &none
+            &kp F1     &kp F2      &kp F3      &kp F4      &kp F5                                                                                                            &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
+            &kp EQUAL  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                                                                                     &kp N6     &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
+            &kp GRAVE  &kp X       &kp Y       &kp O       &kp U       &kp SQT                                                                                    &kp SEMI   &kp L       &kp D       &kp W       &kp V       &kp Z
+            &kp CAPS   &hm LALT B  &hm LGUI I  &hm LCTL E  &hm LSFT A  &kp COMMA                                                                                  &kp DOT    &hm LSFT H  &hm LCTL T  &hm LGUI S  &hm LALT N  &kp Q
+            &kp LSHFT  &kp J       &kp P       &kp G       &kp C       &kp MINUS  &kp ESC         &kp UP         &kp DOWN   &kp LEFT  &kp RIGHT  &kp RET          &kp FSLH   &kp R       &kp M       &kp F       &kp K       &kp RSHFT
+            &none      &kp HOME    &kp PG_DN   &kp PG_UP   &kp END                &lm L_CUR BSPC  &lm L_NUM DEL  &none      &none     &kp TAB    &lm L_SYM SPACE             &lparang    &kp LBKT    &kp RBKT    &rparang    &none
             >;
         };
         cursor_layer {
@@ -132,6 +133,16 @@
             &none  &none  &none  &none  &none  &none  &none  &none  &none   &kp LT        &kp GT      &kp KP_EQUAL  &kp KP_MULTIPLY  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DIVIDE  &none
             &none  &none  &none  &none  &none         &none  &none  &none   &kp KP_COMMA  &kp KP_DOT  &kp KP_N0                      &lparang   &kp LBKT   &kp RBKT   &rparang       &none
             >;
-       };
+        };
+        symbols_layer {
+            bindings = <
+            &none      &none      &none      &none      &none                                                                                    &none  &none  &none  &none  &none
+            &none      &kp GRAVE  &kp LPAR   &kp RPAR   &kp SEMI  &kp COMMA                                                               &none  &none  &none  &none  &none  &none
+            &kp EXCL   &kp LBRC   &kp APOS   &kp DQT    &kp RBRC  &kp QMARK                                                               &none  &none  &none  &none  &none  &none
+            &kp HASH   &kp CARET  &kp EQUAL  &kp UNDER  &kp DLLR  &kp ASTRK                                                               &none  &none  &none  &none  &none  &none
+            &kp AT     &kp LT     &kp PIPE   &kp MINUS  &kp GT    &kp FSLH   &kp BSLH   &kp DOT    &kp STAR          &none  &none  &none  &none  &none  &none  &none  &none  &none
+            &kp TILDE  &kp AMPS   &kp LBKT   &kp RBKT   &kp PLUS             &kp PRCNT  &kp COLON  &kp SEMI          &none  &none  &none         &none  &none  &none  &none  &none
+            >;
+        };
     };
 };
