@@ -20,9 +20,7 @@
 #define L_SYM 3
 
 //
-// Glove80 key positions index for positional hold-tap
-// - https://discord.com/channels/877392805654306816/937645688244826154/1066713913351221248
-// - https://media.discordapp.net/attachments/937645688244826154/1066713913133121556/image.png
+// Glove80 key positions index for home row mods
 //
 // |------------------------|------------------------|
 // | LEFT_HAND_KEYS         |        RIGHT_HAND_KEYS |
@@ -187,8 +185,8 @@
             bindings = <
             &none      &none      &none      &none      &none                                                                               &none  &none  &none  &none  &none
             &none      &none      &none      &none      &none      &none                                                             &none  &none  &none  &none  &none  &none
-            &none      &kp EXCL   &kp QMARK  &kp APOS   &kp DQT    &kp SEMI                                                          &none  &none  &none  &none  &none  &none
-            &none      &kp PIPE   &kp MINUS  &kp EQUAL  &kp UNDER  &kp DOT                                                           &none  &none  &none  &none  &none  &none
+            &none      &kp EXCL   &kp QMARK  &kp DQT    &kp APOS   &kp SEMI                                                          &none  &none  &none  &none  &none  &none
+            &none      &kp PIPE   &kp MINUS  &kp UNDER  &kp EQUAL  &kp DOT                                                           &none  &none  &none  &none  &none  &none
             &none      &kp HASH   &kp CARET  &kp DLLR   &kp STAR   &kp COMMA  &kp AT     &kp AMPS   &kp PRCNT   &none  &none  &none  &none  &none  &none  &none  &none  &none
             &none      &none      &none      &kp GRAVE  &kp TILDE             &kp COLON  &kp FSLH   &kp BSLH    &none  &none  &none         &none  &none  &none  &none  &none
             >;
