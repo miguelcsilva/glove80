@@ -7,15 +7,15 @@ A keyboard layout heavily inspired in Sunaku's "Glorious Engrammer" with a few m
 ## Usage
 To install the dependencies:
 ```shell
-poetry install
+uv sync
 ```
 
 To build the firmware:
 ```shell
-Make firmware
+make firmware
 ```
 
 To update the layout:
 ```shell
-Make layout
+make diagram
 ```
