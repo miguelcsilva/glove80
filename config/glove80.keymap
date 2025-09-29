@@ -185,7 +185,7 @@
             &none      &none     &none      &none      &none      &none                                                    &none  &none  &none  &none  &none  &none
             &none      &kp LT    &kp LBRC   &kp RBRC   &kp GT     &none                                                    &none  &none  &none  &none  &none  &none
             &none      &kp LPAR  &kp LBKT   &kp RBKT   &kp RPAR   &none                                                    &none  &none  &none  &none  &none  &none
-            &none      &kp HASH  &kp SEMI   &kp DOT    &kp COMMA  &none  &kp EXCL   &kp AMPS   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+            &none      &none     &kp SEMI   &kp DOT    &kp COMMA  &none  &kp EXCL   &kp AMPS   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
             &none      &none     &none      &none      &none             &kp QMARK  &kp PRCNT  &none  &none  &none  &none         &none  &none  &none  &none  &none
             >;
         };
