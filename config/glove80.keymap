@@ -17,7 +17,8 @@
 #define L_DEF 0
 #define L_CUR 1
 #define L_NUM 2
-#define L_SYM 3
+#define L_SYM1 3
+#define L_SYM2 4
 
 //
 // Glove80 key positions index for home row mods
@@ -87,19 +88,6 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
         };
-        lparang: left_parenthesis_and_less_than {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LPAR>, <&kp LT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        rparang: right_parenthesis_and_greater_than {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RPAR>, <&kp GT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     macros {
@@ -153,12 +141,12 @@
 
         default_layer {
             bindings = <
-            &none   &none        &none        &none        &none                                                                                                             &none        &none        &none        &none        &none 
-            &none   &none        &kp HOME     &kp PG_DN    &kp PG_UP    &kp END                                                                                    &lparang  &kp LBKT     &kp RBKT     &rparang     &none        &none
-            &none   &none        &kp Y        &kp O        &kp U        &kp K                                                                                      &kp M     &kp D        &kp N        &kp L        &none        &none
-            &none   &hml LALT J  &hml LGUI I  &hml LCTL E  &hml LSFT A  &kp B                                                                                      &kp W     &hmr LSFT H  &hmr LCTL T  &hmr LGUI S  &hmr LALT Z  &none
-            &none   &none        &kp G        &kp P        &kp C        &kp X      &kp ESC         &none          &none      &none     &none      &kp RET          &kp Q     &kp R        &kp V        &kp F        &none        &none
-            &none   &none        &none        &none        &none                   &lm L_CUR BSPC  &lm L_NUM DEL  &kp CAPS   &none     &kp TAB    &lm L_SYM SPACE            &none        &none        &none        &none        &none
+            &none   &none        &none        &none        &none                                                                                                                &none        &none        &none        &none        &none 
+            &none   &none        &kp HOME     &kp PG_DN    &kp PG_UP    &kp END                                                                                       &none     &none        &none        &none        &none        &none
+            &none   &none        &kp Y        &kp O        &kp U        &kp K                                                                                         &kp M     &kp D        &kp N        &kp L        &none        &none
+            &none   &hml LALT J  &hml LGUI I  &hml LCTL E  &hml LSFT A  &kp B                                                                                         &kp W     &hmr LSFT H  &hmr LCTL T  &hmr LGUI S  &hmr LALT Z  &none
+            &none   &none        &kp G        &kp P        &kp C        &kp X      &kp ESC         &kp CAPS       &none   &none     &none           &kp RET           &kp Q     &kp R        &kp V        &kp F        &none        &none
+            &none   &none        &none        &none        &none                   &lm L_CUR BSPC  &lm L_NUM DEL  &none   &none     &kp L_SYM2 TAB  &lm L_SYM1 SPACE            &none        &none        &none        &none        &none
             >;
         };
         cursor_layer {
@@ -173,22 +161,32 @@
         };
         number_layer {
             bindings = <
-            &none  &none  &none  &none  &none                                                                           &none            &none        &none         &none          &none
-            &none  &none  &none  &none  &none  &none                                                             &none  &kp KP_MULTIPLY  &kp KP_PLUS  &kp KP_MINUS  &kp KP_DIVIDE  &none
-            &none  &none  &none  &none  &none  &none                                                             &none  &kp KP_N7        &kp KP_N8    &kp KP_N9     &none          &none
-            &none  &none  &none  &none  &none  &none                                                             &none  &kp KP_N4        &kp KP_N5    &kp KP_N6     &none          &none
-            &none  &none  &none  &none  &none  &none  &none  &none  &none   &none      &none       &kp KP_EQUAL  &none  &kp KP_N1        &kp KP_N2    &kp KP_N3     &none          &none
-            &none  &none  &none  &none  &none         &none  &none  &none   &kp COMMA  &kp KP_DOT  &kp KP_N0            &none            &none        &none         &none          &none
+            &none  &none  &none  &none  &none                                                                                 &none        &none         &none          &none  &none
+            &none  &none  &none  &none  &none  &none                                                         &kp KP_MULTIPLY  &kp KP_PLUS  &kp KP_MINUS  &kp KP_DIVIDE  &none  &none
+            &none  &none  &none  &none  &none  &none                                                         &none            &kp KP_N7    &kp KP_N8     &kp KP_N9      &none  &none
+            &none  &none  &none  &none  &none  &none                                                         &none            &kp KP_N4    &kp KP_N5     &kp KP_N6      &none  &none
+            &none  &none  &none  &none  &none  &none  &none  &none  &none   &none  &kp COMMA   &kp KP_EQUAL  &none            &kp KP_N1    &kp KP_N2     &kp KP_N3      &none  &none
+            &none  &none  &none  &none  &none         &none  &none  &none   &none  &kp KP_DOT  &kp KP_N0                      &none        &none         &none          &none  &none
             >;
         };
-        symbols_layer {
+        symbols_layer_1 {
             bindings = <
-            &none      &none      &none      &none      &none                                                                            &none  &none  &none  &none  &none
-            &none      &none      &kp GRAVE  &kp TILDE  &kp PRCNT  &kp AMPS                                                       &none  &none  &none  &none  &none  &none
-            &none      &kp EXCL   &kp QMARK  &kp DQT    &kp APOS   &kp SEMI                                                       &none  &none  &none  &none  &none  &none
-            &none      &kp PIPE   &kp MINUS  &kp UNDER  &kp EQUAL  &kp DOT                                                        &none  &none  &none  &none  &none  &none
-            &none      &kp HASH   &kp CARET  &kp DLLR   &kp STAR   &kp COMMA  &kp AT     &none     &none     &none  &none  &none  &none  &none  &none  &none  &none  &none
-            &none      &none      &none      &none      &none                 &kp COLON  &kp FSLH  &kp BSLH  &none  &none  &none         &none  &none  &none  &none  &none
+            &none      &none       &none      &none      &none                                                                     &none  &none  &none  &none  &none
+            &none      &none       &none      &none      &none      &none                                                   &none  &none  &none  &none  &none  &none
+            &none      &kp GRAVE   &kp TILDE  &kp DQT    &kp APOS   &none                                                   &none  &none  &none  &none  &none  &none
+            &none      &kp PIPE    &kp MINUS  &kp UNDER  &kp EQUAL  &none                                                   &none  &none  &none  &none  &none  &none
+            &none      &kp HASH    &kp CARET  &kp DLLR   &kp STAR   &none  &kp AT     &kp BSLH  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+            &none      &none       &none      &none      &none             &kp COLON  &kp FSLH  &none  &none  &none  &none         &none  &none  &none  &none  &none
+            >;
+        };
+        symbols_layer_2 {
+            bindings = <
+            &none      &none     &none      &none      &none                                                                      &none  &none  &none  &none  &none
+            &none      &none     &none      &none      &none      &none                                                    &none  &none  &none  &none  &none  &none
+            &none      &kp LT    &kp LBRT   &kp LBRC   &kp RT     &none                                                    &none  &none  &none  &none  &none  &none
+            &none      &kp LPAR  &kp LBKT   &kp RBKT   &kp RPAR   &none                                                    &none  &none  &none  &none  &none  &none
+            &none      &kp HASH  &kp SEMI   &kp DOT    &kp COMMA  &none  &kp EXCL   &kp AMPS   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+            &none      &none     &none      &none      &none             &kp QMARK  &kp PRCNT  &none  &none  &none  &none         &none  &none  &none  &none  &none
             >;
         };
     };
